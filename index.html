@@ -6,7 +6,7 @@
     <title>Koga Car Dealership</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -34,112 +34,116 @@
             transition: all 0.3s ease-in-out;
         }
         .header-scrolled {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
         }
-        /* Mobile Menu Animation */
+        /* Hide scrollbar for horizontal scrolling containers */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Mobile Menu Transition */
         #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-            transform: translateX(100%);
+            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
         }
         #mobile-menu.open {
-            transform: translateX(0);
+            max-height: 500px;
+            opacity: 1;
         }
     </style>
 </head>
 <body class="bg-white text-gray-800 antialiased overflow-x-hidden">
 
-    <!-- Sticky Header -->
-    <header id="main-header" class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header id="main-header" class="fixed top-0 w-full z-50 bg-white border-b border-gray-100">
         
-        <!-- Top Contact Bar (Hidden on Mobile) -->
-        <div class="hidden md:block bg-gray-50 border-b border-gray-100">
-            <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center text-xs font-medium text-gray-500">
-                <div class="flex items-center gap-6">
-                    <span class="hover:text-brandRed cursor-pointer transition"><i class="fa-solid fa-location-dot text-brandRed mr-1"></i> 123 Auto Drive, Nogi, Tochigi</span>
-                    <span class="hover:text-brandRed cursor-pointer transition"><i class="fa-solid fa-clock text-brandRed mr-1"></i> Mon-Sat: 9AM - 7PM</span>
+        <div class="hidden lg:block bg-gray-50 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center text-xs">
+                <div class="flex items-center gap-6 text-gray-600 font-medium">
+                    <span class="hover:text-brandRed cursor-pointer transition"><i class="fa-solid fa-location-dot text-brandRed mr-2"></i> 123 Auto Drive, Metro City</span>
+                    <span class="hover:text-brandRed cursor-pointer transition"><i class="fa-solid fa-clock text-brandRed mr-2"></i> Mon-Sat: 9AM - 8PM</span>
                 </div>
-                <div class="flex items-center gap-4">
-                    <span><i class="fa-solid fa-phone text-brandRed mr-1"></i> +123 456 7890</span>
-                    <span class="border-l border-gray-300 pl-4 cursor-pointer hover:text-brandRed transition">EN <i class="fa-solid fa-chevron-down text-[0.6rem] ml-1"></i></span>
+                <div class="flex items-center gap-6 text-gray-600 font-medium">
+                    <span class="cursor-pointer hover:text-gray-900 transition"><i class="fa-solid fa-globe mr-1"></i> English <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i></span>
+                    <a href="#" class="hover:text-brandRed transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-brandRed transition"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
 
-        <!-- Main Navbar (Contained Width) -->
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center bg-white relative">
             
-            <!-- Custom Logo -->
-            <a href="#" class="flex items-center gap-3 group z-50">
-                <div class="w-10 h-10 bg-brandRed text-white flex items-center justify-center rounded-br-xl rounded-tl-xl shadow-md group-hover:bg-red-700 transition">
-                    <i class="fa-solid fa-car-side text-lg"></i>
+            <a href="#" class="flex items-center gap-3 z-20">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-brandRed rounded-br-xl rounded-tl-xl flex items-center justify-center text-white font-black text-2xl italic shadow-md relative overflow-hidden">
+                    K
+                    <div class="absolute top-0 left-0 w-full h-full bg-white opacity-20 transform -skew-x-12 -translate-x-full hover:translate-x-full transition-transform duration-700"></div>
                 </div>
-                <div class="flex flex-col text-left">
-                    <span class="text-2xl font-extrabold tracking-wider text-gray-900 leading-none">KOGA</span>
-                    <span class="text-brandRed text-[0.65rem] font-bold tracking-[0.25em] uppercase mt-0.5">Dealership</span>
+                <div class="flex flex-col leading-none">
+                    <span class="text-xl md:text-2xl font-black tracking-wider text-gray-900">KOGA</span>
+                    <span class="text-[9px] md:text-[10px] tracking-[0.2em] text-gray-500 uppercase font-bold">Dealership</span>
                 </div>
             </a>
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-gray-600">
-                <a href="#" class="text-brandRed">Home</a>
+            <div class="hidden lg:flex items-center gap-8 text-gray-700 font-medium text-sm">
+                <a href="#" class="text-brandRed font-semibold transition">Home</a>
                 <a href="#" class="hover:text-brandRed transition">Inventory</a>
                 <a href="#" class="hover:text-brandRed transition">Services</a>
                 <a href="#" class="hover:text-brandRed transition">Financing</a>
                 <a href="#" class="hover:text-brandRed transition">About Us</a>
-            </nav>
+            </div>
 
-            <!-- Desktop CTA & Mobile Toggle -->
-            <div class="flex items-center gap-4">
-                <button class="hidden lg:block bg-brandRed text-white px-6 py-2.5 rounded text-sm font-bold hover:bg-red-700 transition shadow-sm hover:shadow-md">
+            <div class="hidden lg:flex items-center gap-6">
+                <div class="text-sm font-bold text-gray-800">
+                    <i class="fa-solid fa-phone text-brandRed mr-2"></i> +123 456 7890
+                </div>
+                <button class="bg-brandRed text-white px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-red-700 transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                     Book Test Drive
                 </button>
-                <!-- Hamburger Button (Mobile) -->
-                <button id="menu-btn" class="lg:hidden text-2xl text-gray-800 focus:outline-none z-50 relative w-10 h-10 flex items-center justify-center bg-gray-50 rounded-full">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+            </div>
+
+            <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 bg-gray-50 border border-gray-100 rounded-md flex items-center justify-center text-gray-800 hover:bg-gray-100 transition z-20 focus:outline-none">
+                <i class="fa-solid fa-bars text-lg" id="menu-icon"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-xl">
+            <div class="flex flex-col px-6 py-4 gap-4">
+                <a href="#" class="text-brandRed font-semibold text-lg border-b border-gray-50 pb-2">Home</a>
+                <a href="#" class="text-gray-700 font-medium text-lg hover:text-brandRed transition border-b border-gray-50 pb-2">Inventory</a>
+                <a href="#" class="text-gray-700 font-medium text-lg hover:text-brandRed transition border-b border-gray-50 pb-2">Services</a>
+                <a href="#" class="text-gray-700 font-medium text-lg hover:text-brandRed transition border-b border-gray-50 pb-2">Financing</a>
+                <a href="#" class="text-gray-700 font-medium text-lg hover:text-brandRed transition border-b border-gray-50 pb-2">About Us</a>
+                
+                <div class="flex flex-col gap-3 mt-4">
+                    <div class="text-gray-800 font-bold flex items-center justify-center bg-gray-50 p-3 rounded-md">
+                        <i class="fa-solid fa-phone text-brandRed mr-2"></i> +123 456 7890
+                    </div>
+                    <button class="w-full bg-brandRed text-white px-5 py-3 rounded-md text-base font-semibold hover:bg-red-700 transition shadow-md">
+                        Book Test Drive
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 lg:hidden flex flex-col pt-28 px-6 pb-6 overflow-y-auto">
-        <nav class="flex flex-col gap-6 text-xl font-bold text-gray-800 mb-10">
-            <a href="#" class="text-brandRed border-b border-gray-100 pb-4">Home</a>
-            <a href="#" class="hover:text-brandRed border-b border-gray-100 pb-4">Inventory</a>
-            <a href="#" class="hover:text-brandRed border-b border-gray-100 pb-4">Services</a>
-            <a href="#" class="hover:text-brandRed border-b border-gray-100 pb-4">Financing</a>
-            <a href="#" class="hover:text-brandRed border-b border-gray-100 pb-4">About Us</a>
-        </nav>
-        <div class="mt-auto flex flex-col gap-4">
-            <div class="flex items-center gap-3 text-sm text-gray-500 font-medium">
-                <i class="fa-solid fa-phone text-brandRed"></i> +123 456 7890
-            </div>
-            <button class="w-full bg-brandRed text-white py-4 rounded text-lg font-bold hover:bg-red-700 transition shadow-sm">
-                Book Test Drive
-            </button>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
     <section class="bg-dark text-white hero-bg relative pt-32 md:pt-48 pb-20 md:pb-32 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
-            <div class="lg:w-1/2 z-10 text-center lg:text-left mt-8 lg:mt-0">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-                    Drive Quality.<br>Trust <span class="text-brandRed">Koga.</span>
-                </h1>
-                <p class="text-gray-400 mb-8 text-base md:text-lg max-w-lg mx-auto lg:mx-0">
-                    Find your dependable daily driver and experience honest, trusted service without breaking the bank.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <button class="bg-brandRed text-white px-8 py-3.5 rounded-md font-bold hover:bg-red-700 transition w-full sm:w-auto">Explore Inventory</button>
-                    <button class="border border-white text-white px-8 py-3.5 rounded-md font-bold hover:bg-white hover:text-dark transition w-full sm:w-auto">Our Services</button>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 z-10 text-center md:text-left">
+                <span class="inline-block py-1 px-3 rounded-full bg-red-900/30 text-brandRed text-xs font-bold tracking-wider mb-6 border border-red-900/50 uppercase">Premium Selection</span>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">Drive Quality. Trust<br><span class="text-brandRed">Koga.</span></h1>
+                <p class="text-gray-400 mb-8 text-base md:text-lg max-w-md mx-auto md:mx-0">Find your dependable daily driver and experience honest, transparent, and trusted service.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <button class="bg-brandRed text-white px-8 py-3.5 rounded-md font-semibold hover:bg-red-700 transition shadow-lg shadow-red-900/20">Explore Inventory</button>
+                    <button class="border border-gray-600 text-white px-8 py-3.5 rounded-md font-semibold hover:bg-white hover:text-dark transition">Our Services</button>
                 </div>
             </div>
-            <div class="lg:w-1/2 relative mt-12 lg:mt-0 w-full">
+            <div class="w-full md:w-1/2 relative mt-16 md:mt-0">
                 <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1200&auto=format&fit=crop" alt="Hero Car" class="w-full object-contain drop-shadow-2xl relative z-10 mix-blend-lighten opacity-90 rounded-xl">
-                <!-- Rating Badge (Hidden on very small screens to avoid clutter) -->
-                <div class="hidden sm:flex absolute bottom-0 right-4 bg-black/60 backdrop-blur border border-gray-700 p-3 rounded-lg z-20 items-center gap-3">
+                <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 md:translate-x-0 md:bottom-4 md:right-4 md:left-auto bg-black/60 backdrop-blur border border-gray-700 p-3 rounded-lg z-20 flex items-center gap-3 w-max">
                     <div class="text-3xl font-bold text-white">4.9</div>
                     <div>
                         <div class="text-brandRed text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -150,52 +154,36 @@
         </div>
     </section>
 
-    <!-- Search Section -->
-    <div class="max-w-6xl mx-auto mt-8 lg:-mt-16 relative z-30 px-6">
-        <div class="bg-white rounded-xl shadow-xl p-6 md:p-8 border border-gray-100">
-            <h3 class="text-xl font-bold mb-6 text-center md:text-left">Find Your Perfect Car</h3>
+    <div class="max-w-6xl mx-auto mt-12 md:-mt-16 relative z-30 px-6">
+        <div class="bg-white rounded-xl shadow-xl p-6 border border-gray-100">
+            <h3 class="text-xl font-bold mb-4 text-center md:text-left">Find Your Perfect Car</h3>
             
-            <!-- Tabs -->
-            <div class="flex overflow-x-auto gap-6 mb-6 border-b border-gray-100 pb-2 hide-scrollbar">
-                <button class="font-bold text-brandRed border-b-2 border-brandRed pb-2 px-2 whitespace-nowrap">All Vehicles</button>
-                <button class="font-semibold text-gray-500 hover:text-gray-800 pb-2 px-2 whitespace-nowrap">New</button>
-                <button class="font-semibold text-gray-500 hover:text-gray-800 pb-2 px-2 whitespace-nowrap">Used</button>
-                <button class="font-semibold text-gray-500 hover:text-gray-800 pb-2 px-2 whitespace-nowrap">Certified Pre-Owned</button>
+            <div class="flex gap-6 mb-6 border-b border-gray-100 pb-2 overflow-x-auto scrollbar-hide whitespace-nowrap">
+                <button class="font-medium text-brandRed border-b-2 border-brandRed pb-2 px-2">All Vehicles</button>
+                <button class="font-medium text-gray-500 hover:text-gray-800 pb-2 px-2">New Arrivals</button>
+                <button class="font-medium text-gray-500 hover:text-gray-800 pb-2 px-2">Pre-Owned</button>
+                <button class="font-medium text-gray-500 hover:text-gray-800 pb-2 px-2">Certified</button>
             </div>
-
-            <!-- Search Grid -->
+            
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 <div class="flex flex-col">
-                    <label class="text-xs font-semibold text-gray-500 mb-1">Make</label>
-                    <select class="border border-gray-200 rounded-md p-3 text-sm bg-gray-50 outline-none focus:border-brandRed font-medium text-gray-700">
-                        <option>Any Make</option>
-                        <option>Toyota</option>
-                        <option>Honda</option>
-                    </select>
+                    <label class="text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Make</label>
+                    <select class="border border-gray-200 rounded p-2.5 text-sm bg-gray-50 outline-none focus:border-brandRed transition"><option>Any Make</option></select>
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-xs font-semibold text-gray-500 mb-1">Model</label>
-                    <select class="border border-gray-200 rounded-md p-3 text-sm bg-gray-50 outline-none focus:border-brandRed font-medium text-gray-700">
-                        <option>Any Model</option>
-                    </select>
+                    <label class="text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Model</label>
+                    <select class="border border-gray-200 rounded p-2.5 text-sm bg-gray-50 outline-none focus:border-brandRed transition"><option>Any Model</option></select>
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-xs font-semibold text-gray-500 mb-1">Body Type</label>
-                    <select class="border border-gray-200 rounded-md p-3 text-sm bg-gray-50 outline-none focus:border-brandRed font-medium text-gray-700">
-                        <option>Any Body</option>
-                        <option>Sedan</option>
-                        <option>SUV</option>
-                    </select>
+                    <label class="text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Body Type</label>
+                    <select class="border border-gray-200 rounded p-2.5 text-sm bg-gray-50 outline-none focus:border-brandRed transition"><option>Any Body Type</option></select>
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-xs font-semibold text-gray-500 mb-1">Max Price</label>
-                    <select class="border border-gray-200 rounded-md p-3 text-sm bg-gray-50 outline-none focus:border-brandRed font-medium text-gray-700">
-                        <option>Under $20,000</option>
-                        <option>Under $25,000</option>
-                    </select>
+                    <label class="text-xs font-semibold text-gray-500 mb-1 uppercase tracking-wide">Price Range</label>
+                    <select class="border border-gray-200 rounded p-2.5 text-sm bg-gray-50 outline-none focus:border-brandRed transition"><option>Any Price</option><option>Under $20,000</option></select>
                 </div>
-                <div class="flex items-end mt-2 lg:mt-0">
-                    <button class="w-full bg-brandRed text-white p-3 rounded-md text-sm font-bold hover:bg-red-700 transition shadow-sm h-[46px] flex items-center justify-center gap-2">
+                <div class="flex items-end sm:col-span-2 lg:col-span-1 mt-2 lg:mt-0">
+                    <button class="w-full bg-brandRed text-white p-2.5 rounded text-sm font-semibold hover:bg-red-700 transition flex justify-center items-center gap-2 h-[42px]">
                         <i class="fa-solid fa-magnifying-glass"></i> Search
                     </button>
                 </div>
@@ -203,249 +191,212 @@
         </div>
     </div>
 
-    <!-- Shop By Brand -->
-    <section class="max-w-7xl mx-auto py-16 px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 gap-4 text-center md:text-left">
-            <h2 class="text-2xl font-bold">Shop By Brand</h2>
-            <a href="#" class="text-sm font-bold text-gray-500 hover:text-brandRed flex items-center gap-1 transition">View All Brands <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    <section class="max-w-7xl mx-auto py-16 md:py-24 px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-10 gap-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center md:text-left">Shop By Brand</h2>
+            <a href="#" class="text-sm font-semibold hover:text-brandRed flex items-center gap-1">View All Brands <i class="fa-solid fa-arrow-right text-xs"></i></a>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            <!-- Brand Badges -->
-            <div class="aspect-square flex flex-col items-center justify-center border border-gray-200 rounded-2xl hover:border-brandRed hover:shadow-md transition cursor-pointer bg-white group">
-                <span class="font-bold text-lg text-gray-400 group-hover:text-brandRed transition">Toyota</span>
-            </div>
-            <div class="aspect-square flex flex-col items-center justify-center border border-gray-200 rounded-2xl hover:border-brandRed hover:shadow-md transition cursor-pointer bg-white group">
-                <span class="font-bold text-lg text-gray-400 group-hover:text-brandRed transition">Honda</span>
-            </div>
-            <div class="aspect-square flex flex-col items-center justify-center border border-gray-200 rounded-2xl hover:border-brandRed hover:shadow-md transition cursor-pointer bg-white group">
-                <span class="font-bold text-lg text-gray-400 group-hover:text-brandRed transition">Ford</span>
-            </div>
-            <div class="aspect-square flex flex-col items-center justify-center border border-gray-200 rounded-2xl hover:border-brandRed hover:shadow-md transition cursor-pointer bg-white group">
-                <span class="font-bold text-lg text-gray-400 group-hover:text-brandRed transition">Nissan</span>
-            </div>
-            <div class="aspect-square flex flex-col items-center justify-center border border-gray-200 rounded-2xl hover:border-brandRed hover:shadow-md transition cursor-pointer bg-white group">
-                <span class="font-bold text-lg text-gray-400 group-hover:text-brandRed transition">Hyundai</span>
-            </div>
-            <div class="aspect-square flex flex-col items-center justify-center border border-brandRed rounded-2xl hover:shadow-md transition cursor-pointer bg-red-50 group">
-                <span class="font-bold text-lg text-brandRed">Kia</span>
-            </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:justify-between items-center gap-4 lg:gap-0 lg:opacity-60 lg:grayscale hover:grayscale-0 transition-all duration-300">
+            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl">Toyota</span></div>
+            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl">Honda</span></div>
+            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl">Ford</span></div>
+            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl">Nissan</span></div>
+            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl">Hyundai</span></div>
+            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl text-brandRed lg:text-gray-800">Kia</span></div>
         </div>
     </section>
 
-    <!-- Commitment Section -->
     <section class="bg-lightGray py-20 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-            <div class="lg:w-1/2 text-center lg:text-left">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Your Journey,<br>Our Commitment.</h2>
-                <p class="text-gray-500 text-sm md:text-base mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                    At Koga Car Dealership, we combine reliability, performance, and trust to deliver an unmatched automotive experience for every budget. We don't just sell cars; we build relationships.
-                </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left max-w-md mx-auto lg:mx-0">
-                    <div class="flex items-center gap-3 font-semibold text-gray-700 bg-white p-3 rounded-lg shadow-sm">
-                        <i class="fa-solid fa-wrench text-brandRed w-5 text-center"></i> Expert Technicians
-                    </div>
-                    <div class="flex items-center gap-3 font-semibold text-gray-700 bg-white p-3 rounded-lg shadow-sm">
-                        <i class="fa-solid fa-gear text-brandRed w-5 text-center"></i> Genuine Parts
-                    </div>
-                    <div class="flex items-center gap-3 font-semibold text-gray-700 bg-white p-3 rounded-lg shadow-sm">
-                        <i class="fa-solid fa-face-smile text-brandRed w-5 text-center"></i> Satisfaction
-                    </div>
-                    <div class="flex items-center gap-3 font-semibold text-gray-700 bg-white p-3 rounded-lg shadow-sm">
-                        <i class="fa-solid fa-tag text-brandRed w-5 text-center"></i> Honest Pricing
-                    </div>
-                </div>
-                <button class="bg-dark text-white px-8 py-3.5 rounded-md font-bold hover:bg-gray-800 transition w-full sm:w-auto">Learn More About Us</button>
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+            <div class="w-full lg:w-5/12 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Your Journey, Our Commitment.</h2>
+                <p class="text-gray-600 text-base mb-8 leading-relaxed">At Koga Car Dealership, we combine reliability, performance, and trust to deliver an unmatched automotive experience for every budget. Our priority is putting you behind the wheel of a car you'll love.</p>
+                <ul class="space-y-4 mb-8 text-left max-w-sm mx-auto md:mx-0">
+                    <li class="flex items-center gap-4 text-base font-medium bg-white p-3 rounded-lg shadow-sm"><div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center"><i class="fa-solid fa-wrench text-brandRed"></i></div> Expert Technicians</li>
+                    <li class="flex items-center gap-4 text-base font-medium bg-white p-3 rounded-lg shadow-sm"><div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center"><i class="fa-solid fa-gear text-brandRed"></i></div> Genuine Parts</li>
+                    <li class="flex items-center gap-4 text-base font-medium bg-white p-3 rounded-lg shadow-sm"><div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center"><i class="fa-solid fa-tag text-brandRed"></i></div> Transparent Pricing</li>
+                </ul>
+                <button class="bg-brandRed text-white px-8 py-3.5 rounded-md text-sm font-semibold hover:bg-red-700 transition w-full md:w-auto shadow-lg shadow-red-900/20">Learn More About Us</button>
             </div>
-            
-            <!-- Image Grid -->
-            <div class="lg:w-1/2 relative grid grid-cols-2 gap-4 w-full">
-                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop" class="w-full h-40 md:h-56 object-cover rounded-xl shadow-md" alt="Dealership 1">
-                <img src="https://images.unsplash.com/photo-1503376712351-1c4314427610?q=80&w=600&auto=format&fit=crop" class="w-full h-40 md:h-56 object-cover rounded-xl shadow-md" alt="Dealership 2">
-                <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop" class="w-full h-48 md:h-64 object-cover rounded-xl shadow-md col-span-2" alt="Dealership 3">
+            <div class="w-full lg:w-7/12 relative grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop" class="w-full h-40 md:h-56 object-cover rounded-xl shadow-md" alt="Dealership Showroom">
+                <img src="https://images.unsplash.com/photo-1503376712351-1c4314427610?q=80&w=600&auto=format&fit=crop" class="w-full h-40 md:h-56 object-cover rounded-xl shadow-md" alt="Mechanic working">
+                <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop" class="w-full h-48 md:h-72 object-cover rounded-xl shadow-md col-span-2" alt="Dealership Outside">
                 
-                <!-- Floating Card -->
-                <div class="absolute -bottom-6 -right-2 md:bottom-8 md:right-8 bg-brandRed text-white p-4 md:p-6 rounded-xl shadow-xl w-40 md:w-48 text-center border-4 border-lightGray">
-                    <div class="text-3xl md:text-4xl font-extrabold mb-1">4.9</div>
-                    <div class="text-yellow-400 text-xs md:text-sm mb-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <div class="text-[0.65rem] md:text-xs font-bold uppercase tracking-wider">Happy Customers</div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:translate-x-0 lg:translate-y-0 lg:bottom-8 lg:right-8 lg:top-auto lg:left-auto bg-brandRed text-white p-6 rounded-xl shadow-2xl w-48 text-center border-4 border-white">
+                    <div class="text-4xl font-black mb-1">20+</div>
+                    <div class="text-xs font-semibold uppercase tracking-wider mb-2 text-red-200">Years Experience</div>
+                    <div class="text-yellow-400 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Vehicles -->
     <section class="max-w-7xl mx-auto py-20 px-6">
         <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-10 gap-6">
             <h2 class="text-3xl font-bold text-center md:text-left">Featured Vehicles</h2>
-            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold text-gray-500">
-                <button class="text-brandRed border-b-2 border-brandRed pb-1 px-1">All Cars</button>
-                <button class="hover:text-gray-800 pb-1 px-1 transition">Under $15k</button>
-                <button class="hover:text-gray-800 pb-1 px-1 transition">Under $20k</button>
-                <button class="hover:text-gray-800 pb-1 px-1 transition">Certified</button>
+            <div class="flex gap-4 text-sm font-semibold overflow-x-auto w-full md:w-auto scrollbar-hide pb-2 md:pb-0">
+                <button class="text-brandRed border-b-2 border-brandRed pb-1 whitespace-nowrap">All Cars</button>
+                <button class="text-gray-500 hover:text-gray-900 pb-1 whitespace-nowrap transition">Under $15k</button>
+                <button class="text-gray-500 hover:text-gray-900 pb-1 whitespace-nowrap transition">Under $20k</button>
+                <button class="text-gray-500 hover:text-gray-900 pb-1 whitespace-nowrap transition">Certified</button>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <!-- Car Card 1 -->
-            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300 group">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
                 <div class="relative overflow-hidden">
-                    <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded shadow-sm z-10">Great Value</span>
-                    <img src="https://images.unsplash.com/photo-1590362891991-f7028d0034a7?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500" alt="Toyota Corolla">
+                    <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded z-10">Great Value</span>
+                    <img src="https://images.unsplash.com/photo-1590362891991-f7028d0034a7?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Toyota Corolla">
                 </div>
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-1 text-gray-900">Toyota Corolla LE 2020</h4>
-                    <div class="text-brandRed font-extrabold text-2xl mb-4">$18,500</div>
-                    <div class="flex justify-between border-t border-b border-gray-100 py-3 mb-4 text-xs font-semibold text-gray-500">
+                    <div class="text-brandRed font-black text-2xl mb-4">$18,500</div>
+                    <div class="flex justify-between border-t border-b border-gray-100 py-4 mb-5 text-sm text-gray-600">
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gauge text-gray-400"></i> 34k mi</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <button class="w-full border border-gray-200 text-gray-700 py-2.5 rounded font-bold hover:border-brandRed hover:text-brandRed transition text-sm">View Details</button>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             
-            <!-- Car Card 2 -->
-            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300 group">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
                 <div class="relative overflow-hidden">
-                    <span class="absolute top-4 left-4 bg-dark text-white text-xs font-bold px-3 py-1 rounded shadow-sm z-10">Featured</span>
-                    <img src="https://images.unsplash.com/photo-1605810731671-50e50f324683?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500" alt="Honda Civic">
+                    <span class="absolute top-4 left-4 bg-dark text-white text-xs font-bold px-2 py-1 rounded z-10">Featured</span>
+                    <img src="https://images.unsplash.com/photo-1605810731671-50e50f324683?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Honda Civic">
                 </div>
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-1 text-gray-900">Honda Civic EX 2019</h4>
-                    <div class="text-brandRed font-extrabold text-2xl mb-4">$19,200</div>
-                    <div class="flex justify-between border-t border-b border-gray-100 py-3 mb-4 text-xs font-semibold text-gray-500">
+                    <div class="text-brandRed font-black text-2xl mb-4">$19,200</div>
+                    <div class="flex justify-between border-t border-b border-gray-100 py-4 mb-5 text-sm text-gray-600">
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gauge text-gray-400"></i> 42k mi</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <button class="w-full border border-gray-200 text-gray-700 py-2.5 rounded font-bold hover:border-brandRed hover:text-brandRed transition text-sm">View Details</button>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- Car Card 3 -->
-            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300 group">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
                 <div class="relative overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1656468015792-5eb3dbf8ccdd?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500" alt="Hyundai Elantra">
+                    <span class="absolute top-4 left-4 bg-dark text-white text-xs font-bold px-2 py-1 rounded z-10">Featured</span>
+                    <img src="https://images.unsplash.com/photo-1656468015792-5eb3dbf8ccdd?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Hyundai Elantra">
                 </div>
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-1 text-gray-900">Hyundai Elantra SEL 2021</h4>
-                    <div class="text-brandRed font-extrabold text-2xl mb-4">$17,900</div>
-                    <div class="flex justify-between border-t border-b border-gray-100 py-3 mb-4 text-xs font-semibold text-gray-500">
+                    <div class="text-brandRed font-black text-2xl mb-4">$17,900</div>
+                    <div class="flex justify-between border-t border-b border-gray-100 py-4 mb-5 text-sm text-gray-600">
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gauge text-gray-400"></i> 28k mi</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <button class="w-full border border-gray-200 text-gray-700 py-2.5 rounded font-bold hover:border-brandRed hover:text-brandRed transition text-sm">View Details</button>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
-
-            <!-- Car Card 4 -->
-            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300 group">
+            
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
                 <div class="relative overflow-hidden">
-                    <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded shadow-sm z-10">Just Arrived</span>
-                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c3e4?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500" alt="Volkswagen Golf">
+                    <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded z-10">Just Arrived</span>
+                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c3e4?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Volkswagen Golf">
                 </div>
                 <div class="p-6">
-                    <h4 class="font-bold text-xl mb-1 text-gray-900">VW Golf TSI 2018</h4>
-                    <div class="text-brandRed font-extrabold text-2xl mb-4">$16,500</div>
-                    <div class="flex justify-between border-t border-b border-gray-100 py-3 mb-4 text-xs font-semibold text-gray-500">
+                    <h4 class="font-bold text-xl mb-1 text-gray-900">Volkswagen Golf TSI 2018</h4>
+                    <div class="text-brandRed font-black text-2xl mb-4">$16,500</div>
+                    <div class="flex justify-between border-t border-b border-gray-100 py-4 mb-5 text-sm text-gray-600">
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gauge text-gray-400"></i> 55k mi</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <button class="w-full border border-gray-200 text-gray-700 py-2.5 rounded font-bold hover:border-brandRed hover:text-brandRed transition text-sm">View Details</button>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- Car Card 5 -->
-            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300 group">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
                 <div class="relative overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500" alt="Ford Focus">
+                    <span class="absolute top-4 left-4 bg-dark text-white text-xs font-bold px-2 py-1 rounded z-10">Featured</span>
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Ford Focus">
                 </div>
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-1 text-gray-900">Ford Focus SE 2017</h4>
-                    <div class="text-brandRed font-extrabold text-2xl mb-4">$14,200</div>
-                    <div class="flex justify-between border-t border-b border-gray-100 py-3 mb-4 text-xs font-semibold text-gray-500">
+                    <div class="text-brandRed font-black text-2xl mb-4">$14,200</div>
+                    <div class="flex justify-between border-t border-b border-gray-100 py-4 mb-5 text-sm text-gray-600">
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gauge text-gray-400"></i> 68k mi</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <button class="w-full border border-gray-200 text-gray-700 py-2.5 rounded font-bold hover:border-brandRed hover:text-brandRed transition text-sm">View Details</button>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- Car Card 6 -->
-            <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300 group">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
                 <div class="relative overflow-hidden">
-                    <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded shadow-sm z-10">Great Value</span>
-                    <img src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500" alt="Nissan Sentra">
+                    <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded z-10">Great Value</span>
+                    <img src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Nissan Sentra">
                 </div>
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-1 text-gray-900">Nissan Sentra SV 2020</h4>
-                    <div class="text-brandRed font-extrabold text-2xl mb-4">$15,800</div>
-                    <div class="flex justify-between border-t border-b border-gray-100 py-3 mb-4 text-xs font-semibold text-gray-500">
+                    <div class="text-brandRed font-black text-2xl mb-4">$15,800</div>
+                    <div class="flex justify-between border-t border-b border-gray-100 py-4 mb-5 text-sm text-gray-600">
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gauge text-gray-400"></i> 39k mi</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <button class="w-full border border-gray-200 text-gray-700 py-2.5 rounded font-bold hover:border-brandRed hover:text-brandRed transition text-sm">View Details</button>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
+        
+        <div class="mt-12 text-center">
+            <button class="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-md font-bold hover:bg-gray-900 hover:text-white transition w-full md:w-auto">View All Inventory</button>
+        </div>
     </section>
 
-    <!-- Why Choose Us Strip -->
-    <section class="bg-dark text-white py-12 md:py-16 px-6">
+    <section class="bg-dark text-white py-16 px-6">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
-            <h3 class="text-2xl md:text-3xl font-extrabold w-full lg:w-1/4 text-center lg:text-left">Why Choose Koga?</h3>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full lg:w-3/4 gap-8">
-                <div class="flex flex-col items-center lg:items-start text-center lg:text-left gap-3">
-                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-brandRed text-xl mb-1">
-                        <i class="fa-solid fa-car-side"></i>
-                    </div>
+            <h3 class="text-2xl md:text-3xl font-bold w-full lg:w-1/4 text-center lg:text-left">Why Choose Koga?</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-nowrap justify-between w-full lg:w-3/4 gap-8 lg:gap-4">
+                <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left gap-4">
+                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-car-side"></i></div>
                     <div>
                         <div class="font-bold text-base mb-1">Wide Selection</div>
-                        <div class="text-sm text-gray-400">200+ reliable vehicles in stock</div>
+                        <div class="text-sm text-gray-400">200+ reliable vehicles<br class="hidden lg:block"> in stock</div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center lg:items-start text-center lg:text-left gap-3">
-                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-brandRed text-xl mb-1">
-                        <i class="fa-solid fa-hand-holding-dollar"></i>
-                    </div>
+                <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left gap-4">
+                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                     <div>
                         <div class="font-bold text-base mb-1">Competitive Prices</div>
-                        <div class="text-sm text-gray-400">Best value for your investment</div>
+                        <div class="text-sm text-gray-400">Best value for your<br class="hidden lg:block"> investment</div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center lg:items-start text-center lg:text-left gap-3">
-                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-brandRed text-xl mb-1">
-                        <i class="fa-solid fa-file-invoice-dollar"></i>
-                    </div>
+                <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left gap-4">
+                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                     <div>
                         <div class="font-bold text-base mb-1">Easy Financing</div>
-                        <div class="text-sm text-gray-400">Flexible plans for every budget</div>
+                        <div class="text-sm text-gray-400">Flexible plans for<br class="hidden lg:block"> every budget</div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center lg:items-start text-center lg:text-left gap-3">
-                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-brandRed text-xl mb-1">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
+                <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left gap-4">
+                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-headset"></i></div>
                     <div>
                         <div class="font-bold text-base mb-1">After Sales Support</div>
-                        <div class="text-sm text-gray-400">We're with you down the road</div>
+                        <div class="text-sm text-gray-400">We're with you<br class="hidden lg:block"> long after the sale</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Scripts -->
+    <footer class="bg-cardDark text-white py-8 border-t border-gray-800 text-center text-sm text-gray-400">
+        <p>&copy; 2026 Koga Car Dealership. All Rights Reserved.</p>
+    </footer>
+
     <script>
         // Sticky Header Effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('main-header');
-            if (window.scrollY > 20) {
+            if (window.scrollY > 10) {
                 header.classList.add('header-scrolled');
             } else {
                 header.classList.remove('header-scrolled');
@@ -453,20 +404,20 @@
         });
 
         // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
+        const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const icon = menuBtn.querySelector('i');
+        const menuIcon = document.getElementById('menu-icon');
 
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            if(mobileMenu.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+            const isOpen = mobileMenu.classList.contains('open');
+            if (isOpen) {
+                mobileMenu.classList.remove('open');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
             } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-                document.body.style.overflow = 'auto';
+                mobileMenu.classList.add('open');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
             }
         });
     </script>
