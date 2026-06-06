@@ -57,7 +57,7 @@
         }
     </style>
 </head>
-<body class="bg-white text-gray-800 antialiased overflow-x-hidden">
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
 
     <header id="main-header" class="fixed top-0 w-full z-50 bg-white border-b border-gray-100">
         
@@ -110,7 +110,7 @@
             </button>
         </nav>
 
-        <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-xl">
+        <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-xl z-10">
             <div class="flex flex-col px-6 py-4 gap-4">
                 <a href="#" class="text-brandRed font-semibold text-lg border-b border-gray-50 pb-2">Home</a>
                 <a href="#" class="text-gray-700 font-medium text-lg hover:text-brandRed transition border-b border-gray-50 pb-2">Inventory</a>
@@ -155,7 +155,7 @@
     </section>
 
     <div class="max-w-6xl mx-auto mt-12 md:-mt-16 relative z-30 px-6">
-        <div class="bg-white rounded-xl shadow-xl p-6 border border-gray-100">
+        <div class="bg-white rounded-xl shadow-xl p-6 border border-gray-200">
             <h3 class="text-xl font-bold mb-4 text-center md:text-left">Find Your Perfect Car</h3>
             
             <div class="flex gap-6 mb-6 border-b border-gray-100 pb-2 overflow-x-auto scrollbar-hide whitespace-nowrap">
@@ -191,30 +191,49 @@
         </div>
     </div>
 
-    <section class="max-w-7xl mx-auto py-16 md:py-24 px-6">
+    <section class="max-w-7xl mx-auto py-16 md:py-24 px-6 bg-gray-50">
         <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-10 gap-4">
             <h2 class="text-2xl md:text-3xl font-bold text-center md:text-left">Shop By Brand</h2>
             <a href="#" class="text-sm font-semibold hover:text-brandRed flex items-center gap-1">View All Brands <i class="fa-solid fa-arrow-right text-xs"></i></a>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:justify-between items-center gap-4 lg:gap-0 lg:opacity-60 lg:grayscale hover:grayscale-0 transition-all duration-300">
-            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl">Toyota</span></div>
-            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl">Honda</span></div>
-            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl">Ford</span></div>
-            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl">Nissan</span></div>
-            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl">Hyundai</span></div>
-            <div class="w-full lg:w-28 h-24 flex flex-col items-center justify-center border border-gray-100 bg-white rounded-xl hover:border-brandRed hover:text-brandRed hover:shadow-md transition cursor-pointer"><span class="font-bold text-lg md:text-xl text-brandRed lg:text-gray-800">Kia</span></div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:justify-between items-center gap-4 lg:gap-6 lg:opacity-75 lg:grayscale hover:grayscale-0 transition-all duration-300">
+            
+            <div class="w-full lg:w-40 h-24 flex items-center justify-center border border-gray-200 bg-white rounded-xl hover:border-brandRed hover:shadow-lg transition cursor-pointer p-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Toyota.svg" alt="Toyota Logo" class="max-h-full max-w-full object-contain">
+            </div>
+            
+            <div class="w-full lg:w-40 h-24 flex items-center justify-center border border-gray-200 bg-white rounded-xl hover:border-brandRed hover:shadow-lg transition cursor-pointer p-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Honda_Logo.svg" alt="Honda Logo" class="max-h-full max-w-full object-contain">
+            </div>
+            
+            <div class="w-full lg:w-40 h-24 flex items-center justify-center border border-gray-200 bg-white rounded-xl hover:border-brandRed hover:shadow-lg transition cursor-pointer p-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Ford_Motor_Company_Logo.svg" alt="Ford Logo" class="max-h-full max-w-full object-contain">
+            </div>
+            
+            <div class="w-full lg:w-40 h-24 flex items-center justify-center border border-gray-200 bg-white rounded-xl hover:border-brandRed hover:shadow-lg transition cursor-pointer p-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Nissan_2020_logo.svg" alt="Nissan Logo" class="max-h-full max-w-full object-contain">
+            </div>
+            
+            <div class="w-full lg:w-40 h-24 flex items-center justify-center border border-gray-200 bg-white rounded-xl hover:border-brandRed hover:shadow-lg transition cursor-pointer p-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Hyundai_Motor_Company_logo.svg" alt="Hyundai Logo" class="max-h-full max-w-full object-contain">
+            </div>
+            
+            <div class="w-full lg:w-40 h-24 flex items-center justify-center border border-gray-200 bg-white rounded-xl hover:border-brandRed hover:shadow-lg transition cursor-pointer p-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/KIA_logo2.svg" alt="Kia Logo" class="max-h-full max-w-full object-contain">
+            </div>
+
         </div>
     </section>
 
-    <section class="bg-lightGray py-20 px-6">
+    <section class="bg-white py-20 px-6 border-y border-gray-100">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
             <div class="w-full lg:w-5/12 text-center md:text-left">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Your Journey, Our Commitment.</h2>
                 <p class="text-gray-600 text-base mb-8 leading-relaxed">At Koga Car Dealership, we combine reliability, performance, and trust to deliver an unmatched automotive experience for every budget. Our priority is putting you behind the wheel of a car you'll love.</p>
                 <ul class="space-y-4 mb-8 text-left max-w-sm mx-auto md:mx-0">
-                    <li class="flex items-center gap-4 text-base font-medium bg-white p-3 rounded-lg shadow-sm"><div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center"><i class="fa-solid fa-wrench text-brandRed"></i></div> Expert Technicians</li>
-                    <li class="flex items-center gap-4 text-base font-medium bg-white p-3 rounded-lg shadow-sm"><div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center"><i class="fa-solid fa-gear text-brandRed"></i></div> Genuine Parts</li>
-                    <li class="flex items-center gap-4 text-base font-medium bg-white p-3 rounded-lg shadow-sm"><div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center"><i class="fa-solid fa-tag text-brandRed"></i></div> Transparent Pricing</li>
+                    <li class="flex items-center gap-4 text-base font-medium bg-gray-50 p-3 rounded-lg shadow-sm border border-gray-100"><div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center"><i class="fa-solid fa-wrench text-brandRed"></i></div> Expert Technicians</li>
+                    <li class="flex items-center gap-4 text-base font-medium bg-gray-50 p-3 rounded-lg shadow-sm border border-gray-100"><div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center"><i class="fa-solid fa-gear text-brandRed"></i></div> Genuine Parts</li>
+                    <li class="flex items-center gap-4 text-base font-medium bg-gray-50 p-3 rounded-lg shadow-sm border border-gray-100"><div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center"><i class="fa-solid fa-tag text-brandRed"></i></div> Transparent Pricing</li>
                 </ul>
                 <button class="bg-brandRed text-white px-8 py-3.5 rounded-md text-sm font-semibold hover:bg-red-700 transition w-full md:w-auto shadow-lg shadow-red-900/20">Learn More About Us</button>
             </div>
@@ -232,7 +251,7 @@
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto py-20 px-6">
+    <section class="max-w-7xl mx-auto py-20 px-6 bg-gray-50">
         <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-10 gap-6">
             <h2 class="text-3xl font-bold text-center md:text-left">Featured Vehicles</h2>
             <div class="flex gap-4 text-sm font-semibold overflow-x-auto w-full md:w-auto scrollbar-hide pb-2 md:pb-0">
@@ -244,10 +263,10 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded z-10">Great Value</span>
-                    <img src="https://images.unsplash.com/photo-1590362891991-f7028d0034a7?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Toyota Corolla">
+                    <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1.5 rounded shadow-md z-10">Great Value</span>
+                    <img src="https://images.unsplash.com/photo-1550314418-9c5950d2c16d?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Toyota Corolla">
                 </div>
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-1 text-gray-900">Toyota Corolla LE 2020</h4>
@@ -257,14 +276,14 @@
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 bg-gray-50 hover:bg-white rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <span class="absolute top-4 left-4 bg-dark text-white text-xs font-bold px-2 py-1 rounded z-10">Featured</span>
-                    <img src="https://images.unsplash.com/photo-1605810731671-50e50f324683?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Honda Civic">
+                    <span class="absolute top-4 left-4 bg-dark text-white text-xs font-bold px-3 py-1.5 rounded shadow-md z-10">Featured</span>
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Honda Civic">
                 </div>
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-1 text-gray-900">Honda Civic EX 2019</h4>
@@ -274,14 +293,14 @@
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 bg-gray-50 hover:bg-white rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <span class="absolute top-4 left-4 bg-dark text-white text-xs font-bold px-2 py-1 rounded z-10">Featured</span>
-                    <img src="https://images.unsplash.com/photo-1656468015792-5eb3dbf8ccdd?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Hyundai Elantra">
+                    <span class="absolute top-4 left-4 bg-dark text-white text-xs font-bold px-3 py-1.5 rounded shadow-md z-10">Featured</span>
+                    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Hyundai Elantra">
                 </div>
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-1 text-gray-900">Hyundai Elantra SEL 2021</h4>
@@ -291,14 +310,14 @@
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 bg-gray-50 hover:bg-white rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             
-            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded z-10">Just Arrived</span>
-                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c3e4?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Volkswagen Golf">
+                    <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded shadow-md z-10">Just Arrived</span>
+                    <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Volkswagen Golf">
                 </div>
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-1 text-gray-900">Volkswagen Golf TSI 2018</h4>
@@ -308,14 +327,14 @@
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 bg-gray-50 hover:bg-white rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <span class="absolute top-4 left-4 bg-dark text-white text-xs font-bold px-2 py-1 rounded z-10">Featured</span>
-                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Ford Focus">
+                    <span class="absolute top-4 left-4 bg-dark text-white text-xs font-bold px-3 py-1.5 rounded shadow-md z-10">Featured</span>
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Ford Focus">
                 </div>
                 <div class="p-6">
                     <h4 class="font-bold text-xl mb-1 text-gray-900">Ford Focus SE 2017</h4>
@@ -325,13 +344,13 @@
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 bg-gray-50 hover:bg-white rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300 group">
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                 <div class="relative overflow-hidden">
-                    <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded z-10">Great Value</span>
+                    <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-bold px-3 py-1.5 rounded shadow-md z-10">Great Value</span>
                     <img src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=600&auto=format&fit=crop" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" alt="Nissan Sentra">
                 </div>
                 <div class="p-6">
@@ -342,43 +361,43 @@
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gear text-gray-400"></i> Auto</span>
                         <span class="flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-gray-400"></i> Gas</span>
                     </div>
-                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#" class="text-sm font-bold text-gray-800 hover:text-brandRed flex items-center justify-center gap-2 border border-gray-200 bg-gray-50 hover:bg-white rounded-md py-2.5 transition group-hover:border-brandRed">View Details <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
         
         <div class="mt-12 text-center">
-            <button class="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-md font-bold hover:bg-gray-900 hover:text-white transition w-full md:w-auto">View All Inventory</button>
+            <button class="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-md font-bold hover:bg-gray-900 hover:text-white transition w-full md:w-auto shadow-sm hover:shadow-md">View All Inventory</button>
         </div>
     </section>
 
-    <section class="bg-dark text-white py-16 px-6">
+    <section class="bg-dark text-white py-16 px-6 border-t border-gray-800">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
             <h3 class="text-2xl md:text-3xl font-bold w-full lg:w-1/4 text-center lg:text-left">Why Choose Koga?</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-nowrap justify-between w-full lg:w-3/4 gap-8 lg:gap-4">
                 <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left gap-4">
-                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-car-side"></i></div>
+                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg border border-gray-800"><i class="fa-solid fa-car-side"></i></div>
                     <div>
                         <div class="font-bold text-base mb-1">Wide Selection</div>
                         <div class="text-sm text-gray-400">200+ reliable vehicles<br class="hidden lg:block"> in stock</div>
                     </div>
                 </div>
                 <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left gap-4">
-                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg border border-gray-800"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                     <div>
                         <div class="font-bold text-base mb-1">Competitive Prices</div>
                         <div class="text-sm text-gray-400">Best value for your<br class="hidden lg:block"> investment</div>
                     </div>
                 </div>
                 <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left gap-4">
-                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg border border-gray-800"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                     <div>
                         <div class="font-bold text-base mb-1">Easy Financing</div>
                         <div class="text-sm text-gray-400">Flexible plans for<br class="hidden lg:block"> every budget</div>
                     </div>
                 </div>
                 <div class="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left gap-4">
-                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg"><i class="fa-solid fa-headset"></i></div>
+                    <div class="text-brandRed text-3xl bg-cardDark w-14 h-14 rounded-full flex items-center justify-center shadow-lg border border-gray-800"><i class="fa-solid fa-headset"></i></div>
                     <div>
                         <div class="font-bold text-base mb-1">After Sales Support</div>
                         <div class="text-sm text-gray-400">We're with you<br class="hidden lg:block"> long after the sale</div>
@@ -388,7 +407,7 @@
         </div>
     </section>
 
-    <footer class="bg-cardDark text-white py-8 border-t border-gray-800 text-center text-sm text-gray-400">
+    <footer class="bg-cardDark text-white py-8 border-t border-gray-800 text-center text-sm text-gray-500">
         <p>&copy; 2026 Koga Car Dealership. All Rights Reserved.</p>
     </footer>
 
